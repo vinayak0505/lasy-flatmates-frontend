@@ -1,9 +1,9 @@
-import { Container } from "@mui/material";
+import PageContainer from "../../../components/ui/PageContainer";
 
 export default function Flats() {
-  return (
-	<Container>
-		<h1>Flats</h1>
-	</Container>
-  )
+	return (
+		<PageContainer>
+			Lazy FlatMates
+		</PageContainer>
+	)
 }

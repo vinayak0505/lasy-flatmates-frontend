@@ -5,28 +5,34 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 
 const lightTheme = {
 	primary: {
-		main: '#1976d2',
-		light: '#42a5f5',
-		dark: '#1565c0',
+		main: '#0D47A1',
+		light: '#5472d3',
+		dark: '#002171',
 	},
 	secondary: {
-		main: '#00bcd4',
-		light: '#4dd0e1',
-		dark: '#0097a7',
+		main: '#42a5f5',
+		light: '#80d6ff',
+		dark: '#0077c2',
+	},
+	container: {
+		backgroundColor: '#eaf1f9ff',
 	},
 };
 
 const darkTheme = {
 	primary: {
-		main: '#90caf9',
-		light: '#e3f2fd',
-		dark: '#42a5f5',
+		main: '#42a5f5',
+		light: '#80d6ff',
+		dark: '#0077c2',
 	},
 	secondary: {
-		main: '#80deea',
-		light: '#e0f7fa',
-		dark: '#26c6da',
+		main: '#1E88E5',
+		light: '#6ab7ff',
+		dark: '#005cb2',
 	},
+	container: {
+		backgroundColor: '#1a2027',
+	}
 };
 export default function ThemeContextProvider({ children }: { children: React.ReactNode }) {
 	const [theme, setTheme] = useState<Theme>('dark');
@@ -36,6 +42,7 @@ export default function ThemeContextProvider({ children }: { children: React.Rea
 			mode: theme,
 			primary: theme === 'dark' ? darkTheme.primary : lightTheme.primary,
 			secondary: theme === 'dark' ? darkTheme.secondary : lightTheme.secondary,
+			container: theme === 'dark' ? darkTheme.container : lightTheme.container,
 		},
 	}), [theme]);
 	
